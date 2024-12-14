@@ -4,8 +4,6 @@ services:
   mailwizz:
     build: ./mailwizz
     restart: unless-stopped
-    ports:
-      - "8080:80"
     volumes:
       - ./mailwizz/latest:/var/www/html:rw
     environment:
