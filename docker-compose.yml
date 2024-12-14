@@ -5,7 +5,7 @@ services:
     build: ./mailwizz
     restart: unless-stopped
     volumes:
-      - /data/mailwizz/latest:/var/www/html:rw
+      - ./mailwizz/latest:/var/www/html:rw
     environment:
       TZ: 'Europe/Kiev'
     depends_on:
