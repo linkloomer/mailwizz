@@ -5,7 +5,7 @@ services:
     build: ./mailwizz
     restart: unless-stopped
     volumes:
-      - mailwizz-data:/var/www/html:rw
+      - mw-data:/var/www/html:rw
     environment:
       TZ: 'Europe/Amsterdam'
     depends_on:
@@ -34,7 +34,7 @@ volumes:
       type: none
       o: bind
       device: /data/mailwizz/database
-  mailwizz-data:
+  mw-data:
     driver: local
     driver_opts:
       type: none
