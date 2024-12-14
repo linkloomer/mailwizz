@@ -1,18 +1,17 @@
-version: '3.1'
-
 services:
   mailwizz:
     container_name: mailwizz
     build: ./mailwizz
     restart: unless-stopped
     volumes:
-      - /data/mailwizz/data/latest:/var/www/html:rw
+      - /data/mailwizz/app:/var/www/html:rw
     environment:
       TZ: 'Europe/Amsterdam'
     depends_on:
       - mariadb
     networks:
       - nginx-proxy-manager
+      - mailwizz-db
 
 
   mariadb:
@@ -24,8 +23,12 @@ services:
       MYSQL_USER: 'mailwizz_user'
       MYSQL_PASSWORD: 'ng8}H)qm!9|Qdy7TB<n20'
     volumes:
-      - /data/mailwizz/mysql:/var/lib/mysql
+      - /data/mailwizz/db:/var/lib/mysql
+    networks:
+      - mailwizz-db
 
 networks:
   nginx-proxy-manager:
     external: true
+  mailwizz-db:
+    external: false
