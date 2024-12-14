@@ -7,9 +7,9 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./mailwizz/latest:/var/www/html:rw
+      - /data/mailwizz/data/latest:/var/www/html:rw
     environment:
-      TZ: 'Europe/Kiev'
+      TZ: 'Europe/Amsterdam'
     depends_on:
       - mariadb
 
@@ -17,12 +17,9 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'mailwizz'
+      MYSQL_ROOT_PASSWORD: 'd>WCBiodeUm8&:2R8po^8'
       MYSQL_DATABASE: 'mailwizz'
-      MYSQL_USER: 'mailwizz'
-      MYSQL_PASSWORD: 'mailwizz'
+      MYSQL_USER: 'mailwizz_user'
+      MYSQL_PASSWORD: 'ng8}H)qm!9|Qdy7TB<n20'
     volumes:
-      - nginx-pm-db_mysql:/var/lib/mysql
-
-volumes:
-  nginx-pm-db_mysql:
+      - /data/mailwizz/mysql:/var/lib/mysql
