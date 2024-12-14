@@ -7,7 +7,7 @@ services:
     volumes:
       - ./mailwizz/latest:/var/www/html:rw
     environment:
-      TZ: 'Europe/Kiev'
+      TZ: 'Europe/Amsterdam'
     depends_on:
       - mariadb
     networks:
