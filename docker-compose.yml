@@ -5,7 +5,7 @@ services:
     build: ./mailwizz
     restart: unless-stopped
     volumes:
-      - /data/mailwizz/app/latest:/var/www/html:rw
+      - /data/mailwizz/latest:/var/www/html:rw
     environment:
       TZ: 'Europe/Kiev'
     depends_on:
@@ -23,9 +23,12 @@ services:
       MYSQL_USER: 'mailwizz_user'
       MYSQL_PASSWORD: 'wtTCVFjC50as50im1UTcJB3ws'
     volumes:
-      - /data/mailwizz/db:/var/lib/mysql
+      - nginx-pm-db_mysql:/var/lib/mysql
     networks:
       - mailwizz-db
+
+volumes:
+  bnginx-pm-d_mysql:
 
 networks:
   nginx-proxy-manager:
