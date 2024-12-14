@@ -5,7 +5,7 @@ services:
     build: ./mailwizz
     restart: unless-stopped
     volumes:
-      - /data/mailwizz/latest:/var/www/html:rw
+      - ./mailwizz/latest:/var/www/html:rw
     environment:
       TZ: 'Europe/Amsterdam'
     depends_on:
@@ -29,6 +29,11 @@ services:
 
 volumes:
   nginx-pm-db_mysql:
+#    driver: local
+#    driver_opts:
+#      type: none
+#      o: bind
+#      device: /data/mailwizz/database
 
 networks:
   nginx-proxy-manager:
