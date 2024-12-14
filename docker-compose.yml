@@ -4,6 +4,7 @@ services:
   mailwizz:
     build: ./mailwizz
     restart: unless-stopped
+    container_name: mailwizz
     volumes:
       - ./mailwizz/latest:/var/www/html:rw
     environment:
@@ -17,6 +18,7 @@ services:
   mariadb:
     image: mariadb
     restart: always
+    container_name: mailwizz-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: 'B6n5mR51zsj4SubPWbMyitsZ'
       MYSQL_DATABASE: 'mailwizz'
