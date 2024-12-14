@@ -28,7 +28,7 @@ services:
       - mailwizz-db
 
 volumes:
-  bnginx-pm-d_mysql:
+  nginx-pm-db_mysql:
 
 networks:
   nginx-proxy-manager:
