@@ -26,3 +26,10 @@ services:
 
 volumes:
   nginx-pm-db_mysql:
+
+networks:
+  nginx-proxy-manager:
+    external: true
+  mailwizz-db:
+    external: false
+    driver: bridge
