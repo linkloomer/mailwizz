@@ -3,6 +3,8 @@ services:
     container_name: mailwizz
     build: ./mailwizz
     restart: unless-stopped
+    ports:
+      - "8888:80"
     volumes:
       - /data/mailwizz/app:/var/www/html:rw
     environment:
