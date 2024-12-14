@@ -23,17 +23,10 @@ services:
       MYSQL_USER: 'mailwizz_user'
       MYSQL_PASSWORD: 'wtTCVFjC50as50im1UTcJB3ws'
     volumes:
-      - nginx-pm-db_mysql:/var/lib/mysql
+      - ./database:/var/lib/mysql
     networks:
       - mailwizz-db
 
-volumes:
-  nginx-pm-db_mysql:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /data/mailwizz/database
 
 networks:
   nginx-proxy-manager:
