@@ -12,6 +12,9 @@ services:
       TZ: 'Europe/Kiev'
     depends_on:
       - mariadb
+    networks:
+      - mailwizz-db
+      - nginx-proxy-manager
 
   mariadb:
     image: mariadb
@@ -23,6 +26,8 @@ services:
       MYSQL_PASSWORD: 'mailwizz'
     volumes:
       - nginx-pm-db_mysql:/var/lib/mysql
+    networks:
+      - mailwizz-db
 
 volumes:
   nginx-pm-db_mysql:
