@@ -18,10 +18,10 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'mailwizz'
+      MYSQL_ROOT_PASSWORD: 'B6n5mR51zsj4SubPWbMyitsZ'
       MYSQL_DATABASE: 'mailwizz'
-      MYSQL_USER: 'mailwizz'
-      MYSQL_PASSWORD: 'mailwizz'
+      MYSQL_USER: 'mailwizz_user'
+      MYSQL_PASSWORD: 'wtTCVFjC50as50im1UTcJB3ws'
     volumes:
       - nginx-pm-db_mysql:/var/lib/mysql
     networks:
