@@ -33,6 +33,8 @@ services:
     container_name: phpmyadmin
     environment:
       PMA_HOST: mariadb
+      PMA_USER: 'mailwizz_user'
+      PMA_PASSWORD: 'wtTCVFjC50as50im1UTcJB3ws'
       MYSQL_ROOT_PASSWORD: 'B6n5mR51zsj4SubPWbMyitsZ'
     ports:
       - "8888:80"
