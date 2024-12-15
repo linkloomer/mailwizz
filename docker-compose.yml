@@ -27,6 +27,19 @@ services:
     networks:
       - mailwizz-db
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: 'B6n5mR51zsj4SubPWbMyitsZ'
+    ports:
+      - "8888:80"
+    depends_on:
+      - mariadb
+    networks:
+      - mailwizz-db
 
 networks:
   nginx-proxy-manager:
